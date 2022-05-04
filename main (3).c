@@ -10,12 +10,19 @@ Code, Compile, Run and Debug online from anywhere in world.
 
 int main()
 {
-    float e_lado, e_base, s_area;
-    printf("Entre com o valor\n");
-    scanf("%f", &e_lado);
-    scanf("%f", &e_base);
-    s_area = e_base * e_lado;
-    printf("%.2f\n", s_area);
+    int e_decimal, v_var, quociente, resto[11], tmp;
+    scanf("%d", &e_decimal);
+    quociente = e_decimal;
+    v_var=0;
+    while(quociente> 1){
+        resto[v_var]= quociente%2;
+        quociente= quociente/2;
+        v_var++;
+    }
+     resto[v_var]=quociente;
+     for(tmp=v_var;tmp>=0;tmp--){
+         printf("%d", resto[tmp]);
+     }
 
     return 0;
 }
